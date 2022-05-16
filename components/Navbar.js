@@ -4,7 +4,7 @@ import { AuthContext } from '../stores/authContext'
 import { useContext } from 'react'
 
 export default function Navbar() {
-  const { user, login, logout } = useContext(AuthContext)
+  const { user, login, logout, authReady } = useContext(AuthContext)
   console.log(user)
   return (
     <div className="container">
@@ -14,9 +14,9 @@ export default function Navbar() {
         <ul>
           <li><Link href="/"><a>Home</a></Link></li>
           <li><Link href="/guides"><a>Guides</a></Link></li>
-          {!user && <li onClick={login} className="btn">Login/Signup</li>}
-          {user && <li>{user.email}</li>}
-          {user && <li onClick={logout} className="btn">Logout</li>}
+          {!user && authReady && <li onClick={login} className="btn">Login/Signup</li>}
+          {user && authReady && <li>{user.email}</li>}
+          {user && authReady && <li onClick={logout} className="btn">Logout</li>}
         </ul>
       </nav>
       <div className="banner">
