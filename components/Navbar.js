@@ -12,14 +12,14 @@ export default function Navbar() {
         <Image src="/rupee.png" width={50} height={48} />
         <h1>Gaming Vibes</h1>
         { authReady &&
-        <ul>
-          <li><Link href="/"><a>Home</a></Link></li>
-          <li><Link href="/guides"><a>Guides</a></Link></li>
-          {!user && authReady && <li onClick={login} className="btn">Login/Signup</li>}
-          {user && authReady && <li>{user.email}</li>}
-          {user && authReady && <li onClick={logout} className="btn">Logout</li>}
-        </ul>
-      }
+          <ul>
+            <li><Link href="/"><a>Home</a></Link></li>
+            <li><Link href="/guides"><a>Guides</a></Link></li>
+            {!user && authReady && <li onClick={login} className="btn">Login/Signup</li>}
+            {user && authReady && <li>{user.email}</li>}
+            {user && authReady && <li onClick={logout} className="btn">Logout</li>}
+          </ul>
+        }
       </nav>
       <div className="banner">
         <Image src="/banner.png" width={966} height={276} />
