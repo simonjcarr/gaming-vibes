@@ -1,4 +1,4 @@
-exports.handler = async function supermario(event, content) {
+exports.handler = async function supermario(event, context) {
   console.log('function ran')
 
   const data = { name: 'mario', age: '32', job: 'plumber'}
